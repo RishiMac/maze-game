@@ -1,38 +1,100 @@
-.App {
+/* Styling for the header */
+.header {
   text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px; /* Adjust the height as needed */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header h1 {
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Rest of your existing styles */
+/* ... */
+
+/* Center the maze in the middle of the screen */
+.maze-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Set the height of the maze container to 100% of the viewport height */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.maze {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a slight shadow for a 3D effect */
+  box-sizing: content-box; /* Ensure the border doesn't affect dimensions */
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+/* Define cell styles */
+.maze-cell {
+  width: 40px;
+  height: 40px;
+  margin: 0px;
+  display: inline-block;
+  box-sizing: border-box;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Define visited cell style */
+.visited-cell {
+  background-color: lightgray;
+}
+
+/* Define path and wall styles */
+.wall-cell {
+  /* background-color: rgb(50, 167, 225); */
+  border: none;
+}
+
+.path-cell {
+  border: none;
+}
+
+.north-path {
+  border-top: 1px solid blue;
+}
+
+.east-path {
+  border-right: 1px solid green;
+}
+
+.south-path {
+  border-bottom: 1px solid red;
+}
+
+.west-path {
+  border-left: 1px solid orange;
+}
+
+/* Define maze row styles */
+.maze-row {
+  display: flex;
+}
+/* Center the maze and transparent square in the middle of the screen */
+.maze-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+}
+
+/* Transparent square with black border */
+.transparent-square {
+  width: 800px;
+  height: 800px;
+  border: 2px solid black;
+  position: absolute;
+  z-index: -1; /* Place behind the maze */
+  background-color: transparent;
 }
